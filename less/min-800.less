@@ -1,0 +1,75 @@
+// helpers
+.inner{
+    position: relative;
+    margin: auto;
+    max-width: 960px;
+    &:after{
+        .clear;
+    }
+}
+
+
+// app nav
+.nav-inner{
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+
+// jump books : small book display above page view
+#book-list{
+    padding: 35px 0;
+}
+.book-list-mini{
+    overflow: hidden;
+
+    li{
+        float: left;
+        width: 25%;
+        padding: 0 10px 10px;
+        .box-sizing;
+    }
+
+    a{
+        height: 175px;
+    }
+}
+
+
+
+// book page : User facing book view
+#book{
+    padding: 60px 15px;
+}
+
+    #book-index{
+        float: left;
+        width: 25%;
+
+        strong{
+            background: none;
+            padding-left:0;
+            color: #ccc;
+
+            &:after{
+                display: none;
+            }
+        }
+
+        .page-menu{
+            display: block;
+            border-bottom:0;
+        }
+    }
+
+    #book-page{
+        float: right;
+        width: 70%;
+    }
+
+        .page{
+            h2, h3{
+                font-size: 42px;
+            }
+        }

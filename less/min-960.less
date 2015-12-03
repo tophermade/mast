@@ -1,0 +1,96 @@
+// nav
+#app-nav{
+    position: relative;
+    padding: 13px 15px;
+    background: #fff;
+    .shadow(0 0 3px rgba(0,0,0,.1));
+    z-index: 100;
+
+    .nav-inner{
+        position: relative;
+    }
+
+    #logo{
+        position: absolute;
+        top:0;
+        left:0;
+        width: 33px;
+
+        &:hover{
+            width: 133px;
+        }
+    }
+
+    h2{
+        padding: 15px 0 0;
+        border:0;
+
+        a{
+            transition: ease all .3s;
+        }
+
+        a:hover{
+            color: #ccc;
+            text-decoration: none;
+        }
+    }
+}
+
+.action-center{
+    float: right;
+    .true(33px);
+
+    .edit, .tools{
+        display: block;
+        transition: ease all .3s;
+        text-decoration: none;
+    }
+
+    .tools{
+        padding:0;
+        width: 33px;
+        height: 33px;
+    }
+
+    .edit{
+        margin-left: 20px;
+    }
+
+    .edit:hover{
+        color: @navy;
+        border: 2px solid navy;
+    }
+
+    .tools{
+        position: relative;
+        border: 0;
+        width: 33px;
+        .indent;
+        background: url(../img/gear.png) center 5px no-repeat;
+        transition: ease all .3s;
+
+        &:hover{
+            transform: rotate(90deg);
+        }
+    }
+}
+
+
+// jump books : small book display above page view
+.book-list-mini{
+    li{
+        width: 20%;
+        padding: 0 10px 0;
+        .box-sizing;
+    }
+
+    a{
+        height: 155px;
+        text-decoration: none;
+        transition: ease all .3s;
+
+        &:hover{
+            opacity:.7;
+        }
+    }
+}

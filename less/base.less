@@ -27,6 +27,47 @@ html, body{
     margin: auto;
 }
 
+#logo{
+    position: relative;
+    height: 33px;
+    width: 33px;
+    margin: auto auto 45px;
+    background: url(../img/mast-logo.png) left center no-repeat;
+    background-size:contain;
+    overflow: hidden;
+    transition: ease all .3s;
+
+    &:hover{
+        width: 133px;
+
+        &:after{
+            right:0;
+        }
+    }
+
+    &:before{
+        position: absolute;
+        top:0;
+        right: 90px;
+        bottom:0;
+        width: 90px;
+        left: 43px;
+        content:'';
+        background: url(../img/mast-logotype.png) center left no-repeat;
+        background-size:contain;
+        transition: ease all .3s;
+    }
+
+    a{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        .indent;
+        z-index: 10;
+    }
+}
+
 
 
 
@@ -45,47 +86,6 @@ html, body{
     background: #fff;
     .shadow(0 0 3px rgba(0,0,0,.1));
     .round(5px);
-
-    h1{
-        position: relative;
-        height: 33px;
-        width: 33px;
-        margin: auto auto 45px;
-        background: url(../img/mast-logo.png) left center no-repeat;
-        background-size:contain;
-        overflow: hidden;
-        transition: ease all .3s;
-
-        &:hover{
-            width: 133px;
-
-            &:after{
-                right:0;
-            }
-        }
-
-        &:before{
-            position: absolute;
-            top:0;
-            right: 90px;
-            bottom:0;
-            width: 90px;
-            left: 43px;
-            content:'';
-            background: url(../img/mast-logotype.png) center left no-repeat;
-            background-size:contain;
-            transition: ease all .3s;
-        }
-
-        a{
-            position: relative;
-            display: block;
-            width: 100%;
-            height: 100%;
-            .indent;
-            z-index: 10;
-        }
-    }
 
     .access-field{
         position: relative;
@@ -122,7 +122,282 @@ html, body{
 
 
 
+// nav
+#app-nav{
+    position: relative;
+    padding: 13px 0;
+    background: #fff;
+    .shadow(0 0 3px rgba(0,0,0,.1));
+    z-index: 100;
+    text-align: center;
 
+    &:after{
+        .clear;
+    }
+
+    #logo{
+        float: left;
+        margin-bottom: 0;
+        width: 133px;
+    }
+
+    h2{
+        position: relative;
+        display: inline;
+        color: @navy;
+        .gotham;
+        font-size: 16px;
+        clear: none;
+        padding: 0;
+        border:0;
+        .true(33px);
+    }
+}
+
+    .action-center{
+        float: right;
+        .true(33px);
+
+        .edit, .tools{
+            float: left;
+            .true(29px);
+            border: 2px solid @green;
+            .round(17px);
+            padding: 0 18px;
+            color: @green;
+            display: none;
+            text-transform: uppercase;
+            .gotham;
+        }
+
+
+        .user-pic{
+            position: relative;
+            float: right;
+            width: 33px;
+            height: 33px;
+            .round(100px);
+            margin-left: 32px;
+
+            &:before{
+                position: absolute;
+                top:0;
+                left: -16px;
+                width: 2px;
+                bottom:0;
+                background: @gray;
+                content:"";
+            }
+
+            img{
+                display: block;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+
+
+// jump books : small book display above page view
+#jump-books{
+    position: relative;
+    padding: 30px 15px;
+    background: @gray;
+}
+
+    .book-list-mini{
+        position: relative;
+
+        li{
+            padding-bottom: 10px;
+        }
+
+        a{
+            position: relative;
+            display: block;
+            padding: 25px;
+            text-align: left;
+            color: @navy;
+            font-size: 18px;
+            .gotham;
+            background: #fff;
+            .round(5px);
+            .shadow(0 0 3px rgba(0,0,0,.1));
+            line-height: 1.3;
+
+            strong{
+                position: relative;
+                display: block;
+                padding-top: 20px;
+
+                &:before{
+                    position: absolute;
+                    top: 0px;
+                    height: 3px;
+                    left:0;
+                    width: 60px;
+                    background: @red;
+                    content:'';
+                }
+            }
+        }
+    }
+
+
+
+
+// book page : User facing book view
+#book{
+    position: relative;
+    background: #fff;
+    padding: 15px;
+}
+
+    #book-index{
+        position: relative;
+        padding-bottom: 25px;
+
+        strong{
+            position: relative;
+            text-transform: uppercase;
+            //color: #ccc;
+            color: #fff;
+            .gotham;
+            display: block;
+            .true(33px);
+            background: @green;
+            padding-left: 10px;
+
+            &:after{
+                position: absolute;
+                top:0;
+                right:0;
+                bottom:0;
+                width: 33px;
+                .true(33px);
+                content:"+";
+                font-size: 28px;
+                .gotham;
+                background: @green;
+                color: #fff;
+                text-align: center;
+            }
+        }
+
+        .page-menu{
+            position: relative;
+            display: none;
+            padding-bottom: 15px;
+            border-bottom: 1px solid @gray;
+        }
+
+        strong.active + .page-menu{
+            display: block;
+        }
+
+        li{
+            padding: 8px 0;
+            color: @gray;
+            .gotham;
+
+            ul{
+                padding: 8px 0 0 12px;
+
+                li:last-of-type{
+                    padding-bottom: 0;
+                }
+            }
+
+            a{
+                color: #999;
+
+                &.active{
+                    color: @green;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+    #add-new-page{
+        position: relative;
+        .true(33px);
+        color: #ccc;
+        font-style: italic;
+        .gotham;
+    }
+
+
+    .page{
+        position: relative;
+        font-size: 16px;
+        color: #555;
+        line-height:1.5;
+
+        h2, h3{
+            font-size: 32px;
+            color: #333;
+            .gotham;
+            padding-bottom: .5em;
+        }
+
+        h4{
+            font-size: 26px;
+            color: #333;
+            .gotham;
+            padding-bottom: .5em;
+        }
+
+        p, ul, ol, dl, blockquote, figure{
+            padding-bottom: 1.5em;
+
+            p, ul, ol, dl{
+                &:last-of-type{
+                    padding-bottom:0;
+                }
+            }
+        }
+
+        blockquote{
+            background: @gray;
+            border-left: 5px solid #FBC13C;
+            padding: 1.5em;
+            margin-bottom: 1.5em;
+        }
+
+        ul li{
+            padding: 5px 0 5px 30px;
+            background: url(../img/target.png) 0 9px no-repeat;
+        }
+
+        img{
+            display: block;
+            margin: auto;
+            max-width: 100%;
+        }
+    }
+
+        .book-page-nav{
+            position: relative;
+            padding: 25px 0;
+            overflow: hidden;
+            border-top: 1px solid @gray;
+
+            a{
+                color: @navy;
+                .gotham;
+                text-transform: uppercase;
+            }
+
+            .next{
+                float: right;
+            }
+
+            .prev{
+                float: left;
+            }
+        }
 
 
 
